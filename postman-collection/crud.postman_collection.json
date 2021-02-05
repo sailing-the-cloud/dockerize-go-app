@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "43ee1dc6-f52a-41cf-93fb-c88fbc970ba2",
+		"name": "Pretest PryviID",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Create category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Inspirasi\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/public/api/v1/category",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"public",
+								"api",
+								"v1",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/public/api/v1/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"public",
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get category by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/public/api/v1/category/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"public",
+								"api",
+								"v1",
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"Makanan dan Minuman\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/public/api/v1/category/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"public",
+								"api",
+								"v1",
+								"category",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/public/api/v1/category/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"public",
+								"api",
+								"v1",
+								"category",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create new product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"100 Merubah Hidup Jadi Lebih Baik\",\n    \"description\": \"Buku bagaiman menjadi web developer selama 100 hari\",\n    \"categories\": [\n        {\n            \"id\": 1,\n            \"name\": \"Buku\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Inspirasi\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/public/api/v1/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"public",
+								"api",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productId",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "imageName",
+									"value": "Biskuit Khong Huan",
+									"type": "text"
+								},
+								{
+									"key": "productImage",
+									"type": "file",
+									"src": "/Volumes/OTHER/konghuan.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/public/api/v1/product-image",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"public",
+								"api",
+								"v1",
+								"product-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/public/api/v1/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"public",
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/public/api/v1/product/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"public",
+								"api",
+								"v1",
+								"product",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update product by id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Biskuit Macan\",\n    \"description\": \"Biskuit enak bergizi dan menjadi obat laparmu\",\n    \"categories\": [\n        {\n            \"id\": 3,\n            \"name\": \"Snack\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Inspirasi\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/public/api/v1/product/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"public",
+								"api",
+								"v1",
+								"product",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/public/api/v1/product/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"public",
+								"api",
+								"v1",
+								"product",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
